@@ -1,0 +1,12 @@
+my max int = 2147483647
+int.MaxValue = 2147483647
+my min int = -2147483648
+int.MinValue = -2147483648
+min double = 2,22044604925031E-16
+min float = 1,192093E-07
+2^(-52) = 2,22044604925031E-16
+2^(-23) = 1,19209289550781E-07
+float_sum_up=15,40368
+float_sum_down=18,80792
+double_sum_up=21,3716310803036
+double_sum_down=21,3716310812321
