@@ -1,0 +1,13 @@
+set term svg
+set decimalsign locale
+set out "odeA.svg"
+set encoding utf8
+set xlabel 'x'
+set ylabel "y"
+set key top right
+set xzeroaxis
+set yzeroaxis
+set title "Logistic function"
+plot [0:3][0:1] \
+	"outA.txt" using ($1):($2) with lines title "ODE A"
+ 

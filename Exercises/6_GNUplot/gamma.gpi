@@ -1,0 +1,12 @@
+set term svg
+set decimalsign locale
+set out "Gamma.svg"
+set xlabel "x"
+set ylabel "y"
+set key bottom right
+set xzeroaxis
+set yzeroaxis
+set title "Gamma function"
+plot [][-5:5] \
+	"out.gamma.txt" using ($1):($2) with lines title "gamma" \
+	,"out.gamma.test.txt" with points pt 7 title "Test points"

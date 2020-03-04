@@ -1,0 +1,16 @@
+set term svg
+set decimalsign locale
+set out "odeB.svg"
+set encoding utf8
+set xlabel 'x'
+set ylabel "y"
+set key top right
+set xzeroaxis
+set yzeroaxis
+set title "Orbits"
+set size ratio -1 
+
+plot [-1.5:2.5][-1.5:1.5] \
+	"outB1.txt" using (1/$2)*sin($1):(1/$2)*cos($1) with lines title "Orbit with ε=0 u(0)=1 u'(0)=0"\
+	,"outB2.txt" using (1/$2)*sin($1):(1/$2)*cos($1) lt 1 lc rgb "red" title "Orbit with ε=0 u(0)=1 u'(0)=-0.5"\
+	,"outB3.txt" using (1/$2)*sin($1):(1/$2)*cos($1) with lines title "Orbit with ε=0.01 u(0)=1 u'(0)=-0.5"\

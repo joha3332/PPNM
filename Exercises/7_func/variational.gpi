@@ -1,0 +1,12 @@
+set term svg
+set decimalsign locale
+set out "variational.svg"
+set encoding utf8
+set xlabel 'α'
+set ylabel "E"
+set key top right
+set xzeroaxis
+set yzeroaxis
+set title "Gamma function"
+plot [0:3][0:3] \
+	"outC.txt" using ($1):($2) with lines title "1d oscillator"

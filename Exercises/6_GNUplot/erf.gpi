@@ -1,0 +1,16 @@
+set term svg
+set decimalsign locale
+set out "Erf.svg"
+set xlabel "x"
+set ylabel "erf(x)"
+set key bottom right
+set xzeroaxis lt 1 lc rgb "#b"
+set yzeroaxis lt 1 lc rgb "#b"
+set title "Gamma function"
+
+set grid ytics lw 1 lt 0 lc rgb "#b"
+set grid xtics lw 1 lt 0 lc rgb "#b"
+
+plot [-4:4][-1.1:1.1] \
+	"out.erf.txt" using ($1):($2) with lines title "Error funcion" \
+	,"out.erf.test.txt" with points pt 7 title "Test points"
