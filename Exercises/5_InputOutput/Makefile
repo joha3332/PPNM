@@ -14,5 +14,5 @@ stdinout.exe	:	stdinout.cs;	mcs $<
 fileio.exe	:	fileio.cs;	mcs $<
 
 clean:
-	rm *.exe out* input.txt
+	rm *.exe out*
 

@@ -16,9 +16,6 @@ class  fileio
         StreamWriter outstream = new StreamWriter(outfile, append: false);
 
 
-        //System.IO.TextReader stdin = System.Console.In;
-
-
         outstream.WriteLine("# x \t Sin(x) \t Cos(x)");
 
         do

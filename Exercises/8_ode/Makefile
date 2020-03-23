@@ -35,8 +35,8 @@ mainB.exe: mainB.cs matlib.dll
 
 ####   Matlib   ####
 LIBDIR = ../matlib
-VECTOR = $(LIBDIR)/matrix/matrix.cs
-MATRIX = $(LIBDIR)/matrix/vector.cs
+MATRIX = $(LIBDIR)/matrix/matrix.cs
+VECTOR = $(LIBDIR)/matrix/vector.cs
 ODE = $(LIBDIR)/ode/ode.cs
 
 matlib.dll: $(VECTOR) $(MATRIX) $(ODE)

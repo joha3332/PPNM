@@ -5,8 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-class main{
-static int Main(string[] args){
+public static class main{
+public static int Main(string[] args){
 
 	double e=0,a=0,b=0,y0=0,y1=0;
 	foreach(string s in args){

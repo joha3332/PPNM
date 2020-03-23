@@ -1,0 +1,17 @@
+set term svg
+set decimalsign locale
+set out "PlotC_slope.svg"
+set encoding utf8
+set xlabel 'x'
+set ylabel "y"
+set key top right
+set xzeroaxis
+set yzeroaxis
+set title "qspline slope of sin(x) data"
+ 
+
+plot [0:10][:] \
+	"out_cspline_slope.txt" using ($1):($2) with lines lc rgb "blue" title "slope of quardratic interpolation"\
+	, cos(x) dashtype 2 lw 3 lc rgb "red" title "non-interplated data"\
+	
+

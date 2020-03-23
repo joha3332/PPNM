@@ -1,0 +1,21 @@
+
+set term cairolatex input size 7cm,5cm
+set decimalsign locale
+set out "Bessel.tex"
+set encoding utf8
+set xlabel 'x'
+set ylabel "y"
+set key top right
+set xzeroaxis
+set yzeroaxis
+set title "Besselfunctions"
+#set size ratio -1 
+
+plot [0:9][-.5:1.1] \
+	"outBessel0.txt" using ($1):($2) with lines lc rgb "blue" title "Bessel 𝜈=0"\
+	,"outBessel1.txt" using ($1):($2) with lines lc rgb "red" title "Bessel 𝜈=1"\
+	,"outBessel2.txt" using ($1):($2) with lines lc rgb "green" title "Bessel 𝜈=2"\
+	,"bessel_checkpoints.txt" using ($2):($1) ls 7 lc rgb "blue" title "data 𝜈=0"\
+	,"bessel_checkpoints.txt" using ($3):($1) ls 7 lc rgb "red" title "data 𝜈=1"\
+	,"bessel_checkpoints.txt" using ($4):($1) ls 7 lc rgb "green" title "data 𝜈=2"\
+
