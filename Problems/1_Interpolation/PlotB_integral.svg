@@ -126,15 +126,15 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(323.4,31.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >qspline slope of sin(x) data</tspan></text>
+		<text><tspan font-family="Arial" >Qspline - integral of sin(x)</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
-	<g id="gnuplot_plot_1" ><title>slope of quardratic interpolation</title>
+	<g id="gnuplot_plot_1" ><title>Integration of quardratic interpolation</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(507.9,76.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >slope of quardratic interpolation</tspan></text>
+		<text><tspan font-family="Arial" >Integration of quardratic interpolation</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -265,12 +265,12 @@
 		L570.5,129.6 L571.0,130.2 L571.5,130.8 L572.0,131.4 L572.5,132.0 L573.0,132.6 L573.5,133.2 L574.0,133.8
 		L574.5,134.5 L575.0,135.2  '/></g>
 	</g>
-	<g id="gnuplot_plot_2" ><title>non-interplated data	</title>
+	<g id="gnuplot_plot_2" ><title>Analytic value of integral</title>
 <g fill="none" color="white" stroke="rgb(  0,   0, 255)" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(507.9,94.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >non-interplated data	</tspan></text>
+		<text><tspan font-family="Arial" >Analytic value of integral</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">

@@ -7,11 +7,11 @@ set ylabel "y"
 set key top right
 set xzeroaxis
 set yzeroaxis
-set title "qspline slope of sin(x) data"
+set title "Qspline - integral of sin(x)"
  
 
 plot [0:10][:] \
-	"out_qspline_integral.txt" using ($1):($2) with lines lc rgb "blue" title "slope of quardratic interpolation"\
-	, 1-cos(x) dashtype 2 lw 3 lc rgb "red" title "non-interplated data\
+	"out_qspline_integral.txt" using ($1):($2) with lines lc rgb "blue" title "Integration of quardratic interpolation"\
+	, 1-cos(x) dashtype 2 lw 3 lc rgb "red" title "Analytic value of integral"\
 	
 

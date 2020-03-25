@@ -1,0 +1,16 @@
+set term svg
+set decimalsign locale
+set out "A2_plot.svg"
+set encoding utf8
+set key top right
+set xzeroaxis
+set yzeroaxis
+set title "Particle in a box"
+
+
+plot "a2_data.txt" index 0 using ($1):($2) with lines title "k=0"\
+	,"a2_data.txt" index 1 using ($1):($2) with lines title "k=1"\
+	,"a2_data.txt" index 2 using ($1):($2) with lines title "k=2"\
+
+	
+
