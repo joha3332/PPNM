@@ -21,7 +21,7 @@ A2_out.txt a2_data.txt: mainA2.exe
 
 
 ####   Matlib   ####
-LIBDIR = ../matlib
+LIBDIR = ../../matlib
 MATRIX = $(LIBDIR)/matrix/matrix.cs
 VECTOR = $(LIBDIR)/matrix/vector.cs
 JACOBI = jacobi.cs
