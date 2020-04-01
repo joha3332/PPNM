@@ -24,21 +24,18 @@ b/PlotB.svg: b/Makefile
 
 ########## Problem C ##############
 
-PlotC.svg: c/PlotC.svg
-	cp c/PlotC.svg ./
+PlotC.svg: probC/PlotC.svg
+	cp probC/PlotC.svg ./
 PlotC_slope.svg: c/PlotC_slope.svg
 	cp c/PlotC_slope.svg ./
-PlotC_integral.svg: c/PlotC_integral.svg
+PlotC_integral.svg: b/PlotC_integral.svg
 	cp c/PlotC_integral.svg ./
 
-c/PlotC.svg: c/Makefile
-	cd c/ && make
+probC/PlotC.svg: probC/Makefile
+	cd probC/ && make
 
 
 
 clean:
-	cd a/ && make clean
-	cd b/ && make clean
-	cd c/ && make clean
 	rm -f Out* *.svg
 

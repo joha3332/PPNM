@@ -6,10 +6,9 @@ using System.Diagnostics;
 
 class main{
 static void Main(){
-	/// Test on random matrix ///
-// WriteLine("/////////////// Part B - Elapsed time for n*n matrix ///////////////");
-// WriteLine($"Elapsed time for row by row method of frst eigenvalue");
-// WriteLine($"n \t runtime \t reps");
+////////////// Part B - Elapsed time for n*n matrix ///////////////");
+	
+//////   Elapsed time for row by row method of first eigenvalue
 	WriteLine();WriteLine();
 for(int n=40;n<200;n+=5){
 	var rand= new Random(1);
@@ -31,12 +30,11 @@ for(int n=40;n<200;n+=5){
 	row_time.Stop();
 
 
-	
+/////  matrix dimension n*n 		runtime			number of sweeps
 	WriteLine($"{n} \t {row_time.ElapsedMilliseconds} \t {reps}");
 }
 
-// WriteLine($"Elapsed time for row by row method");
-// WriteLine($"n \t runtime \t reps");
+/////////   Elapsed time for row by row method
 	WriteLine();WriteLine();
 for(int n=40;n<101;n+=5){
 	var rand= new Random(1);
@@ -58,12 +56,12 @@ for(int n=40;n<101;n+=5){
 	row_time.Stop();
 
 
-	
+/////  matrix dimension n*n 		runtime			number of sweeps
 	WriteLine($"{n} \t {row_time.ElapsedMilliseconds} \t {reps}");
 	}
 
-// WriteLine($"Elapsed time for cyclic method");
-// WriteLine($"n \t runtime \t sweeps");
+//Elapsed time for cyclic method
+
 	WriteLine();WriteLine();
 for(int n=40;n<200;n+=5){
 	var rand= new Random(1);
@@ -85,7 +83,7 @@ for(int n=40;n<200;n+=5){
 	cyclic_time.Stop();
 
 
-	
+/////   matrix dimension n*n 		runtime			number of sweeps
 	WriteLine($"{n} \t {cyclic_time.ElapsedMilliseconds} \t {sweeps}");
 	}
 }

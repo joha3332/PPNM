@@ -11,7 +11,7 @@ set title "Cspline - integral of sin(x)"
  
 
 plot [0:10][-0.5:2.5] \
-	"out_cspline_integral.txt" using ($1):($2) with lines lc rgb "blue" title "Integral of quardratic interpolation"\
+	"out_cspline_integral.txt" using ($1):($2) with lines lc rgb "blue" title "Integral of cubic interpolation"\
 	, 1-cos(x) dashtype 2 lw 3 lc rgb "red" title "Analytic value of integral"\
 	
 

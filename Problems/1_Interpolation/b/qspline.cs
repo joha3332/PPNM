@@ -58,23 +58,31 @@ public double eval(double z){
 }
 
 public double derivative(double z){
-	int i=binary_search(z);
-	double h=z-x[i];
+	int i=0, j=x.size-1;							// Find the datapoints that z lies between
+		while(j-i>1){
+			int m=(i+j)/2;
+			if (z>x[m]) i=m; 
+			else j=m;}
 
-	return b[i]+2*c[i]*h;
+	return b[i]+2*c[i]*(z-x[i]);
 }
 
 //Linear intergrator
 public double integral(double z){
-	int i, i_max = binary_search(z);
+	int i=0, j=x.size-1;							// Find the datapoints that z lies between
+		while(j-i>1){
+			int m=(i+j)/2;
+			if (z>x[m]) i=m; 
+			else j=m;}
+	int i_max=i;
 	
-	double area=0, h;
+	double area=0, dx;
 	for(i=0;i<i_max;i++){
-		h=x[i+1]-x[i];
-		area+=y[i]*h+b[i]/2*h*h+c[i]/3*h*h*h;
+		dx=x[i+1]-x[i];
+		area+=y[i]*dx+b[i]/2*dx*dx+c[i]/3*dx*dx*dx;
 	}
-	h=z-x[i_max];
-	area+=y[i_max]*h+b[i_max]/2*h*h+c[i_max]/3*h*h*h;
+	dx=z-x[i_max];
+	area+=y[i_max]*dx+b[i_max]/2*dx*dx+c[i_max]/3*dx*dx*dx;
 
 	return area;
 	}

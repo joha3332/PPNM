@@ -12,6 +12,6 @@ set title "linear spline of sin(x) data"
 
 plot [0:10][-1.2:1.4] \
 	"out_lspline.txt" using ($1):($2) with lines lc rgb "blue" title "linear interpolation"\
-	,"input.txt" using ($1):($2) ls 7 lc rgb "red" title "non-interplated data"\
+	,"../input.txt" using ($1):($2) ls 6 lc rgb "red" title "non-interplated data"\
 	
 

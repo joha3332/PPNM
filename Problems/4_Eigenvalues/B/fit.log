@@ -772,3 +772,39 @@ correlation matrix of the fit parameters:
                 ac     bc     
 ac              1.000 
 bc              0.734  1.000 
+
+
+*******************************************************************************
+Wed Apr  1 11:23:03 2020
+
+
+FIT:    data read from "B_times_out.txt" index 2
+        format = z
+        #datapoints = 32
+        residuals are weighted equally (unit weight)
+
+function used for fitting: fc(x)
+	fc(x)=bc+(x/ac)**cc
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   ac            bc           
+   0 2.8257863775e+08   0.00e+00  6.84e+03    1.000000e+01   1.000000e+00
+   7 2.1768882363e+03  -2.22e-04  6.84e-04    2.298438e+01  -5.412291e+00
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 2176.89
+rel. change during last iteration : -2.21682e-09
+
+degrees of freedom    (FIT_NDF)                        : 30
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 8.51839
+variance of residuals (reduced chisquare) = WSSR/ndf   : 72.5629
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+ac              = 22.9844          +/- 0.06393      (0.2782%)
+bc              = -5.41229         +/- 2.218        (40.97%)
+
+correlation matrix of the fit parameters:
+                ac     bc     
+ac              1.000 
+bc              0.734  1.000 

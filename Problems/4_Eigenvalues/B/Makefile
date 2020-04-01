@@ -1,6 +1,8 @@
-all:  B_times_out.txt B_times_plot.svg
+all:  B_out.txt B_times_out.txt B_times_plot.svg 
 
 
+B_out.txt: mainB.exe
+	mono mainB.exe > B_out.txt 
 
 mainB.exe: MainB.cs matlib.dll
 	mcs MainB.cs -reference:matlib.dll

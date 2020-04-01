@@ -7,10 +7,9 @@ using System.Diagnostics;
 class main{
 static void Main(){
 	/// Test on random matrix ///
-WriteLine("/////////////// Part B - Elapsed time for n*n matrix ///////////////");
-WriteLine($"Elapsed time for row by row method");
-WriteLine($"n \t runtime \t reps");
-	for(int n=5;n<100;n+=5){
+WriteLine("/////////////// Part B - test of row by row method///////////////");
+
+int n=5;	
 	var rand= new Random(1);
 
 	matrix A= new matrix(n,n);
@@ -23,24 +22,32 @@ WriteLine($"n \t runtime \t reps");
 		A[j,i]=A[i,j];
 	}
 
-	//A.print($"random {n}x{n} matrix"); WriteLine();
+	A.print($"random {n}x{n} matrix"); WriteLine();
 	matrix B=A.copy();
 
-	Stopwatch row_time = new Stopwatch();
-	row_time.Start();
 	int reps=jacobi_row.row(B,e,n,V);
-	//WriteLine($"Number of repititions in jacobi={reps}"); WriteLine();
-	row_time.Stop();
-
-	//matrix D=(V.T*A*V);
-	//(D).print("Should be a diagonal matrix V.T*B*V=");WriteLine();
-	//e.print("Eigenvalues should equal the diagonal elements above"); WriteLine();
-
-	//matrix A2=(V*D*V.T);
-	//(A2).print("Check that V*D*V.T=A"); WriteLine();
-
+	WriteLine($"Number of repititions in jacobi={reps}"); WriteLine();
 	
-	WriteLine($"{n} \t {row_time.ElapsedMilliseconds} \t {reps}");
-	}
+
+	matrix D=(V.T*A*V);
+	(D).print("Should be a diagonal matrix V.T*B*V=");WriteLine();
+	e.print("Eigenvalues should equal the diagonal elements above"); WriteLine();
+
+	matrix A2=(V*D*V.T);
+	(A2).print("Check that V*D*V.T=A"); WriteLine();
+
+
+
+WriteLine("/////////////// Find only the higest eigen value///////////////");
+
+	vector e1= new vector(n);
+	matrix V1= new matrix(n,n);
+
+	A.print($"random {n}x{n} matrix"); WriteLine();
+	matrix C=-A.copy();
+
+	int reps1=jacobi_row.row(C,e1,n,V1);
+	WriteLine($"Number of repititions in jacobi={reps1}"); WriteLine();
+	WriteLine($"Higest eigenvalue is {-e1[0]}"); WriteLine();
 }
 }

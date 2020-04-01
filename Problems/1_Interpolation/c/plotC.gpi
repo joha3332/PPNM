@@ -12,6 +12,6 @@ set title "Cspline of sin(x)"
 
 plot [0:10][-1.2:1.4] \
 	"out_cspline.txt" using ($1):($2) with lines lc rgb "blue" title "Cubic interpolation"\
-	,"input.txt" using ($1):($2) ls 7 lc rgb "red" title "Analytic values of sin(x)"\
+	,"../input.txt" using ($1):($2) ls 6 lc rgb "red" title "Analytic values of sin(x)"\
 	
 
