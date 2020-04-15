@@ -23,8 +23,3 @@ matlib.dll: $(MATRIX) $(VECTOR) $(SOLVER)
 
 clean:
 	rm -f *.exe out* *.dll *.svg *.txt
-
-comma:=,
-empty:=
-space:=$(empty) $(empty)
-clist = $(subst $(space),$(comma),$(1))

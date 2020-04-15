@@ -7,7 +7,7 @@ class main{
 static void Main(){
  /////////////// QM-problem ///////////////
 WriteLine($"/////////////// Part A - QM-problem ///////////////");
-	int N=20;
+	int N=100;
 	double s=1.0/(N+1);
 	matrix H=new matrix(N,N);
 
@@ -25,26 +25,26 @@ WriteLine($"/////////////// Part A - QM-problem ///////////////");
 	int sweeps=jacobi.cyclic(H1,eigenvals,V);
 
 
-	H.print($"Hamilton {H.size1}x{H.size2} matrix"); WriteLine();
+	// H.print($"Hamilton {H.size1}x{H.size2} matrix"); WriteLine();
 	WriteLine($"Number of sweeps in jacobi={sweeps}"); WriteLine();
 
-	matrix D=(V.T*H*V);
-	(D).print("Should be a diagonal matrix V.T*H*V=");WriteLine();
-	eigenvals.print("Eigenvalues should equal the diagonal elements above"); WriteLine();
+	// matrix D=(V.T*H*V);
+	// (D).print("Should be a diagonal matrix V.T*H*V=");WriteLine();
+	// eigenvals.print("Eigenvalues should equal the diagonal elements above"); WriteLine();
 
-	matrix H2=(V*D*V.T);
-	(H2).print("Check that V*D*V.T=H"); WriteLine();
-
-
+	// matrix H2=(V*D*V.T);
+	// (H2).print("Check that V*D*V.T=H"); WriteLine();
 
 
 
 
-	WriteLine($"k \t Calculated \t \t  Exact");
+
+
+	WriteLine($"k \t Calculated \t  Exact \t Relative deviation");
 	for (int k=0; k<N/3; k++){
     	double exact = PI*PI*(k+1)*(k+1);
     	double calculated = eigenvals[k];
-    	WriteLine($"{k} \t {calculated} \t {exact}");
+    	WriteLine($"{k} \t {calculated} \t {exact} \t {(calculated-exact)/exact*100}%");
 	}
 
 	for(int k=0;k<3;k++){

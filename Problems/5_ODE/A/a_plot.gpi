@@ -1,0 +1,18 @@
+set term svg
+set decimalsign locale
+set out "A_plot.svg"
+set encoding utf8
+set key bottom right
+set xzeroaxis
+set yzeroaxis
+set title "dy_0/dx=y_1, dy_1/dx=-y_0"
+
+
+plot "a_out.txt" using ($1):($2) with lines lw 2 title "y(x)"\
+	,"a_out.txt" using ($1):($3) with lines lw 2 title "dy/dx=1"\
+	,cos(x) dashtype 2 lw 3 lc rgb "red" title "cos(x)"\
+	,-sin(x) dashtype 2 lw 3 lc rgb "red" title "-sin(x)"\
+
+
+	
+

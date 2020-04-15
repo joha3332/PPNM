@@ -24,7 +24,7 @@ Check that V*D*V.T=A
     0,772     0,944     0,029     0,320     0,990 
     0,658     0,101     0,248     0,990     0,682 
 
-/////////////// Find only the higest eigen value///////////////
+/////////////// Find only the higest eigen values///////////////
 random 5x5 matrix
     0,249     0,111     0,467     0,772     0,658 
     0,111     0,433     0,354     0,944     0,101 
@@ -32,7 +32,14 @@ random 5x5 matrix
     0,772     0,944     0,029     0,320     0,990 
     0,658     0,101     0,248     0,990     0,682 
 
-Number of repititions in jacobi=255
+Number of repititions in jacobi=240
 
-Higest eigenvalue is 2,45470963514976
+First two diagonal elements should be the two higest eigenvalues
+    2,455     0,000     0,000     0,000     0,000 
+    0,000     0,643     0,000     0,000     0,000 
+    0,000     0,000    -0,363    -0,458    -0,078 
+    0,000     0,000    -0,458    -0,498     0,559 
+    0,000     0,000    -0,078     0,559     0,090 
+
+Eigenvalues should equal the diagonal elements above      2,45      0,643     -0,363     -0,498     0,0895 
 

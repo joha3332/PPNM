@@ -2,7 +2,7 @@ using System;
 using static System.Math;
 
 public class jacobi_row{
-public static int row(matrix A, vector e, int nvalues=1, matrix V=null){
+public static int row(matrix A, vector e, int nvalues=1, matrix V=null,string ordering="low"){
 	bool changed;
 	int reps=0,n=A.size1;
 	for(int i=0;i<n;i++) e[i]=A[i,i];
@@ -13,6 +13,12 @@ public static int row(matrix A, vector e, int nvalues=1, matrix V=null){
 			V[j,i]=0;
 		}
 	}
+
+	int order=1;							//Eigenvalue ordering for low to high
+	string high= "high";
+	if(ordering.Equals(high)){order=-1;}	//Changes ordering from high to low, if specified
+
+
 	int p,q;	
 	for(p=0; p<nvalues;p++)do{
 		changed=false;
@@ -20,7 +26,7 @@ public static int row(matrix A, vector e, int nvalues=1, matrix V=null){
 			double app=e[p];
 			double aqq=e[q];
 			double apq=A[p,q];
-			double phi=0.5*Atan2(2*apq,aqq-app);
+			double phi=0.5*Atan2(2*apq*order,(aqq-app)*order);
 			double c=Cos(phi);
 			double s=Sin(phi);
 			double app1=c*c*app - 2*s*c*apq + s*s*aqq;

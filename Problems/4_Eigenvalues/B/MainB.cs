@@ -38,16 +38,20 @@ int n=5;
 
 
 
-WriteLine("/////////////// Find only the higest eigen value///////////////");
+WriteLine("/////////////// Find only the higest eigen values///////////////");
 
 	vector e1= new vector(n);
 	matrix V1= new matrix(n,n);
+	string order= "high";
 
 	A.print($"random {n}x{n} matrix"); WriteLine();
-	matrix C=-A.copy();
+	matrix C=A.copy();
 
-	int reps1=jacobi_row.row(C,e1,n,V1);
+	int reps1=jacobi_row.row(C,e1,2,V1,order);
 	WriteLine($"Number of repititions in jacobi={reps1}"); WriteLine();
-	WriteLine($"Higest eigenvalue is {-e1[0]}"); WriteLine();
+	
+
+	matrix D1=(V1.T*A*V1);
+	(D1).print("First two diagonal elements should be the two higest eigenvalues");
 }
 }
