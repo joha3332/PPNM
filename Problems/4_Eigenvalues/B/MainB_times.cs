@@ -10,7 +10,7 @@ static void Main(){
 	
 //////   Elapsed time for row by row method of first eigenvalue
 	WriteLine();WriteLine();
-for(int n=40;n<200;n+=5){
+for(int n=200;n<400;n+=5){
 	var rand= new Random(1);
 
 	matrix A= new matrix(n,n);

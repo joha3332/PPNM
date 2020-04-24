@@ -1,0 +1,7 @@
+Start point:        10         10 
+n_calls=6367
+Root of f =         1          1 
+f(root)=  9,04e-08  -4,34e-08 
+eps=0,0001
+f(root).norm =1,00254737992518E-07
+Test passed

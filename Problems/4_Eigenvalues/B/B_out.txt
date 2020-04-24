@@ -40,6 +40,3 @@ First two diagonal elements should be the two higest eigenvalues
     0,000     0,000    -0,363    -0,458    -0,078 
     0,000     0,000    -0,458    -0,498     0,559 
     0,000     0,000    -0,078     0,559     0,090 
-
-Eigenvalues should equal the diagonal elements above      2,45      0,643     -0,363     -0,498     0,0895 
-

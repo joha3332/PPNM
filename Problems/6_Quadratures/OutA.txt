@@ -1,0 +1,12 @@
+Integral from 0 to 1 of Sqrt(x), acc=0,001 eps=0,001
+result 0,667438079304079 	 calls 12
+exact result 0,666666666666667
+Tolerance 0,00166743807930408 	 Error estimate 0,000599550953580209 	 Real error 0,000771412637412539
+test failed
+
+Integral from 0 to 1 of 4*Sqrt(1-x^2) dx, acc=1E-06 eps=0
+result 3,14159266287232 	 calls 532
+exact result 3,14159265358979
+Tolerance 1E-06 	 Error estimate 6,07205647258115E-07 	 Real error 9,28253118814837E-09
+test passed
+
