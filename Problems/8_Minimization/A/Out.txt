@@ -1,0 +1,30 @@
+nsteps=4
+Minimization of Cos(x)
+Starting point: 	 3
+Minimum found at 	 3,14159276616059
+Function value at minimum 	 -0,999999999999994
+Accurecy goal: 	 1E-06
+Deviation from exact: 	 1,12570798904699E-07
+test passed
+
+
+nsteps=63
+Minimization of Rosenbrock
+Starting point:         3          3 
+Minimum found at         1          1 
+Exact minimum at         1          1 
+Function value at minimum 	 1,74850165985624E-15
+Accurecy goal: 	 1E-06
+Deviation from exact: 	 9,28448639162793E-08
+test passed
+
+
+nsteps=13
+Minimization of Himmelblau
+Starting point:        -1         -1 
+Minimum found at     -3,78      -3,28 
+Exact minimum at     -3,78      -3,28 
+Function value at minimum 	 4,30872264731356E-18
+Accurecy goal: 	 1E-06
+Deviation from exact: 	 2,53280283576673E-07
+test passed

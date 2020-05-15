@@ -1,0 +1,13 @@
+set term svg
+set out "Plot.svg"
+set encoding utf8
+set key right
+set xzeroaxis
+set yzeroaxis
+set decimalsign locale
+
+set title "Higgs signal"
+set xlabel "Energy [GeV]"
+set ylabel "σ-signal"
+plot "higgs.txt" index 0 using ($1):($2):($3) with errorbars title "Measurments"\
+,"plotdata.txt" index 1 using ($1):($2) with lines title "fit"

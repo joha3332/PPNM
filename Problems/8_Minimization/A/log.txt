@@ -1,0 +1,3 @@
+broyden: |delta_x|<eps*|x|
+broyden: |gx|<acc
+broyden: |delta_x|<eps*|x|
