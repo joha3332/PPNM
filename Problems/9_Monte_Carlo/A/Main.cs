@@ -15,7 +15,7 @@ WriteLine("Test 1 - Integration of (sin(x))^2 from 0 to 2*PI");
 	vector res=mcintegrator.plainmc(a,b,sin2,N);
 	double exact= PI;
 	WriteLine("Exact value \t MC value \t error estimate \t error");
-	WriteLine($"{exact:f5} \t {res[0]:f5} \t {res[1]:f5} \t {Abs(exact-res[0]):f5}");
+	WriteLine($"{exact:f5} \t {res[0]:f5} \t {res[1]:f5} \t\t {Abs(exact-res[0]):f5}");
 	if(Abs(exact-res[0])<res[1]) WriteLine("test passed");
 	else    WriteLine("test failed");
 Write("\n\n");
@@ -30,7 +30,7 @@ WriteLine("Test 2 - Integration of sin(x)*sin(y) from 0 to PI");
 	exact= 4;
 
 	WriteLine("Exact value \t MC value \t error estimate \t error");
-	WriteLine($"{exact:f5} \t {res[0]:f5} \t {res[1]:f5} \t {Abs(exact-res[0]):f5}");
+	WriteLine($"{exact:f5} \t {res[0]:f5} \t {res[1]:f5} \t\t {Abs(exact-res[0]):f5}");
 	if(Abs(exact-res[0])<res[1]) WriteLine("test passed");
 	else    WriteLine("test failed");
 Write("\n\n");
@@ -46,7 +46,7 @@ WriteLine("Test 3 - Integration of 1/(1-Cos(x[0])*Cos(x[1])*Cos(x[2]))/(PI*PI*PI
 	exact= 1.3932039296856768591842462603255;
 	
 	WriteLine("Exact value \t MC value  \t error estimate \t error");
-	WriteLine($"{exact:f5} \t {res[0]:f5} \t {res[1]:f5} \t {Abs(exact-res[0]):f5}");
+	WriteLine($"{exact:f5} \t {res[0]:f5} \t {res[1]:f5} \t\t {Abs(exact-res[0]):f5}");
 	if(Abs(exact-res[0])<res[1]) WriteLine("test passed");
 	else    WriteLine("test failed");
 Write("\n\n");

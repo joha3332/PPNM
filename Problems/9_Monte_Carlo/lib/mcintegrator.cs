@@ -4,15 +4,14 @@ using static System.Math;
 public class mcintegrator{
 
 public static vector plainmc(vector a, vector b, Func<vector,double> f, int N){
-	double dim=a.size;
+	int dim=a.size;
 	var rnd= new Random();
 
-	Func<vector> randomx = delegate() {
-		vector rnd_x= new vector(a.size);
+	Action<vector> randomx = delegate(vector v) {
 		for(int i=0; i<dim;i++){	
-			rnd_x[i]=a[i]+(b[i]-a[i])*rnd.NextDouble();}
-		return rnd_x;
+			v[i]=a[i]+(b[i]-a[i])*rnd.NextDouble();}
 	};
+
 
 	double V=1;
 	for(int i=0; i<dim;i++) {V*=b[i]-a[i];}
@@ -21,7 +20,7 @@ public static vector plainmc(vector a, vector b, Func<vector,double> f, int N){
 	vector x= new vector(dim);
 
 	for(int i=0; i<N;i++){
-		x=randomx();
+		randomx(x);
 		fx=f(x);
 		sum+=fx;
 		sum2+=fx*fx;		

@@ -10,12 +10,21 @@ set xlabel "N (sample points)";
 set ylabel "Absolut error";
 
 A=1;
-fc(x)=A/sqrt(x);
-fit fc(x) "Out.txt" index 0 via A;
+B=0.3;
+fee(x)=A*x**B;
+fit fee(x) "Out.txt" index 0 using 1:2 via A,B;
+
+C=1;
+D=0.3;
+fae(x)=C*x**D;
+fit fae(x) "Out.txt" index 0 using 1:3 via C,D;
+
 
 plot "Out.txt" index 0 using ($1):($2) pointtype 7 title "error estimate"\
 	,"Out.txt" index 0 using ($1):($3) pointtype 5 title "actual error"\
-	,fc(x) lw 3 title sprintf("Fit actual error: (%.f)/sqrt(x)",A) \
+	,fee(x) lw 3 title sprintf("Fit error estimate: (%f)*x^(%f)",A,B) \
+	,fae(x) lw 4 title sprintf("Fit actual error: (%f)*x^(%f)",C,D) \
+
 
 
 	

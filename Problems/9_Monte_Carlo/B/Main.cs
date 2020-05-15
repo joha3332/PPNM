@@ -14,8 +14,8 @@ static void Main(){
 	double exact= 4;
 	int N;
 
-	for(int i=5 ;i<50;i++){
-	N=i*10000;
+	for(int i=10 ;i<100;i++){
+	N=i*5000;
 	vector res=mcintegrator.plainmc(a,b,sinsin,N);
 	WriteLine($"{N} \t {res[1]:f8} \t {(Abs(exact-res[0])):f8}");
 	}	

@@ -25,7 +25,7 @@ matlib.dll: $(MATRIX) $(VECTOR)
 
 
 clean:
-	rm -f *.exe Out* *.dll
+	rm -f *.exe Out* *.dll *.log *.svg
 
 comma:=,
 empty:=
