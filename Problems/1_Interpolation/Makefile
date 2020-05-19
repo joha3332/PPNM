@@ -1,37 +1,27 @@
-All: PlotA.svg Out_lspline_integral.txt PlotB.svg PlotB_slope.svg PlotB_integral.svg PlotC.svg PlotC_slope.svg PlotC_integral.svg
+All: PlotA.svg PlotB.svg PlotC.svg 
 
 ########## Problem A ##############
 
-PlotA.svg: a/PlotA.svg
-	cp a/PlotA.svg ./
-Out_lspline_integral.txt: a/Out_lspline_integral.txt
-	cp a/Out_lspline_integral.txt ./
+PlotA.svg: A/PlotA.svg
+	cp A/PlotA.svg ./
 
-a/PlotA.svg: a/Makefile
+A/PlotA.svg: A/Makefile
 	cd a/ && make
 
 ########## Problem B ##############
 
-PlotB.svg: b/PlotB.svg
+PlotB.svg: B/PlotB.svg
 	cp b/PlotB.svg ./
-PlotB_slope.svg: b/PlotB_slope.svg
-	cp b/PlotB_slope.svg ./
-PlotB_integral.svg: b/PlotB_integral.svg
-	cp b/PlotB_integral.svg ./
 
-b/PlotB.svg: b/Makefile
+B/PlotB.svg: b/Makefile
 	cd b/ && make
 
 ########## Problem C ##############
 
-PlotC.svg: c/PlotC.svg
+PlotC.svg: C/PlotC.svg
 	cp c/PlotC.svg ./
-PlotC_slope.svg: c/PlotC_slope.svg
-	cp c/PlotC_slope.svg ./
-PlotC_integral.svg: c/PlotC_integral.svg
-	cp c/PlotC_integral.svg ./
 
-c/PlotC.svg: c/Makefile
+C/PlotC.svg: C/Makefile
 	cd c/ && make
 
 
@@ -40,5 +30,5 @@ clean:
 	cd a/ && make clean
 	cd b/ && make clean
 	cd c/ && make clean
-	rm -f Out* *.svg
+	rm -f *.svg
 

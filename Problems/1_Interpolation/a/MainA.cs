@@ -41,27 +41,21 @@ class  mainA
             y[i]=ylist[i];
         }
 
+    lspline s=new lspline(x,y);
     // The linear interpolation
         int N=999;
         for(int i=0;i<=N;i++){
             double z=(x[n-1]-x[0])/N*i+x[0];
-            double yz=lspline.eval(x,y,z);
+            double yz=s.eval(z);
             outstream1.WriteLine($"{z} \t {yz}");
         }
 
-    // Intergrating numericaly via the linear interpolation
-        outstream2.WriteLine($"Linear numerical integral of Sin(x)");
-        outstream2.WriteLine($"Limits \t Numerical result \t Analytical result \t Abs_Error \t Rel_Error ");
-        
-        double area, anal_area, abs_error, rel_error;
-
-        for(int i=0; i<=10; i++){
-        area=lspline.integral(x,y,i);
-        anal_area= (-Cos(i)+Cos(0));
-        abs_error= area-anal_area;
-        rel_error= abs_error/anal_area;
-        outstream2.WriteLine($"0 to {i} \t {area} \t {anal_area} \t {abs_error} \t {rel_error}");
-        }
+    // Intergrating by the linear interpolation
+        for(int i=0;i<=N;i++){
+            double z=(x[n-1]-x[0])/N*i+x[0];
+            double area_z=s.integral(z);
+            outstream2.WriteLine($"{z} \t {area_z}");
+        }  
 
         outstream1.Close();
         outstream2.Close();

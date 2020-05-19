@@ -1,14 +1,9 @@
-All: PlotC.svg PlotC_slope.svg PlotC_integral.svg
+All: PlotC.svg
 
 #### Part B #####
-PlotC.svg: plotC.gpi out_cspline.txt
+PlotC.svg: PlotC.gpi out_cspline.txt
 	gnuplot $<
 
-PlotC_slope.svg: plotC_slope.gpi out_cspline_slope.txt
-	gnuplot $<
-
-PlotC_integral.svg: plotC_integral.gpi out_cspline_integral.txt
-	gnuplot $<
 
 out_cspline.txt: mainC.exe $(INPUT)
 	mono mainC.exe $(INPUT) out_cspline.txt out_cspline_slope.txt out_cspline_integral.txt
@@ -16,13 +11,14 @@ out_cspline.txt: mainC.exe $(INPUT)
 mainC.exe:	MainC.cs spline.dll
 	mcs -reference:spline.dll $<
 
-INPUT = ../input.txt
+INPUT = ../lib/input.txt
 
 ####   Matlib   ####
 LIBDIR = ../../matlib
 VECTOR = $(LIBDIR)/matrix/vector.cs
+CSPLINE = ../lib/cspline.cs
 
-spline.dll: $(VECTOR) cspline.cs
+spline.dll: $(VECTOR) $(CSPLINE)
 	mcs $^ -target:library -out:$@
 
 clean:
