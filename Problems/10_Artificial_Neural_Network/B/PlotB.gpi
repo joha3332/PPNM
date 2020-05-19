@@ -1,0 +1,28 @@
+set term svg
+set decimalsign locale
+set encoding utf8
+set xlabel 'x'
+set ylabel "y"
+set xzeroaxis
+set yzeroaxis
+set out "PlotB.svg"
+set key top right
+
+ 
+set title "Interpolation of sin(x) by Neural Network"
+plot "OutB.txt" index 0 using ($1):($2) pointtype 6 title "Sample points"\
+	,"OutB.txt" index 2 using ($1):($2) with lines title "NN interpolation"\
+
+set out "PlotB_der.svg"
+set key top right
+set title "Derivative of sin(x)"
+plot "OutB.txt" index 2 using ($1):($3)  with lines title "NN derivative"\
+	, cos(x) with lines dashtype 2 lw 3 lc rgb "red" title "Analytic value"\
+
+set out "PlotB_int.svg"
+set key top right
+set title "Integration from 0 to x of sin(x)"
+plot "OutB.txt" index 2 using ($1):($4) with lines title "NN intergral"\
+	,1-cos(x) with lines dashtype 2 lw 3 lc rgb "red" title "Analytic value"\
+	
+

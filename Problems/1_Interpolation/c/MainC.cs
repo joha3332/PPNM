@@ -60,7 +60,7 @@ class  mainC
         }
 
 
-    // Evaluating the derivetives of the spline
+    // Evaluating the integral of the spline
         for(int i=0;i<=N;i++){
             double z=(x[n-1]-x[0])/N*i+x[0];
             double area_z=s.integral(z);
