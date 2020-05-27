@@ -1,10 +1,13 @@
-all: PlotA.svg B_fitoutput.txt
+all: PlotA.svg B_fitoutput.txt PlotC.svg
 
-PlotA.svg: plotA.gpi data.txt
+PlotA.svg: PlotA.gpi data.txt
 	gnuplot $<
 
 data.txt B_fitoutput.txt: main.exe
 	mono main.exe 1>data.txt 2>B_fitoutput.txt
+
+PlotC.svg: PlotC.gpi data.txt
+	gnuplot $<
 
 DLLS = matlib.dll
 

@@ -1,0 +1,20 @@
+set term svg
+set decimalsign locale
+set out "PlotC.svg"
+set encoding utf8
+set xlabel 't (days)'
+set ylabel "Relative Activity (%)"
+set key top right
+set xzeroaxis
+set yzeroaxis
+set yrange [8:150]
+set title "Rutherford and Soddy experiment"
+set logscale y
+
+
+plot "data.txt" index 0 using ($1):($2):($3) with errorbars title "Experimental data"\
+	,"data.txt" index 1 using ($1):($2) with lines title "Best fit"\
+	,"data.txt" index 2 using ($1):($2) with lines title "c[0] + delta_c[0]"\
+	,"data.txt" index 3 using ($1):($2) with lines title "c[0] - delta_c[0]"\
+	,"data.txt" index 4 using ($1):($2) with lines title "c[1] + delta_c[1]"\
+	,"data.txt" index 5 using ($1):($2) with lines title "c[1] - delta_c[1]"\

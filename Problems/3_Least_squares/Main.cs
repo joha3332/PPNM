@@ -46,14 +46,41 @@ double x_lnmax=x[x.size-1];
 vector x_fit= new vector(N+1);
 vector y_lnfit= new vector(N+1);
 vector y_fit= new vector(N+1);
+double xi;
 
 
 for(int i=0;i<=N;i++){
-	double xi=(x_lnmax-x_lnmin)/1000*i+x_lnmin;
+	xi=(x_lnmax-x_lnmin)/1000*i+x_lnmin;
 	x_fit[i]=xi;
  	y_lnfit[i]=fit.eval(xi);
  	y_fit[i]=Exp(y_lnfit[i]);
 
+	WriteLine($"{x_fit[i]:f5}	{y_fit[i]:f5} ");
+}WriteLine();WriteLine();
+
+
+fit.c[0]+=fit.delta_c[0];
+for(int i=0;i<=N;i++){
+ 	y_fit[i]=Exp(fit.eval(x_fit[i]));
+	WriteLine($"{x_fit[i]:f5}	{y_fit[i]:f5} ");
+}WriteLine();WriteLine();
+
+fit.c[0]-=2*fit.delta_c[0];
+for(int i=0;i<=N;i++){
+ 	y_fit[i]=Exp(fit.eval(x_fit[i]));
+	WriteLine($"{x_fit[i]:f5}	{y_fit[i]:f5} ");
+}WriteLine();WriteLine();
+
+fit.c[0]+=fit.delta_c[0];
+fit.c[1]+=fit.delta_c[1];
+for(int i=0;i<=N;i++){
+ 	y_fit[i]=Exp(fit.eval(x_fit[i]));
+	WriteLine($"{x_fit[i]:f5}	{y_fit[i]:f5} ");
+}WriteLine();WriteLine();
+
+fit.c[1]-=2*fit.delta_c[1];
+for(int i=0;i<=N;i++){
+ 	y_fit[i]=Exp(fit.eval(x_fit[i]));
 	WriteLine($"{x_fit[i]:f5}	{y_fit[i]:f5} ");
 }
 
