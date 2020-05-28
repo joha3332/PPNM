@@ -1,0 +1,4 @@
+ode.driver: nsteps>999
+acc=1E-05 eps=1E-05
+npoints=1001
+Solve the ODE up to t=7,5

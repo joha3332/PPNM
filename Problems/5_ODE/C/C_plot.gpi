@@ -1,0 +1,22 @@
+set term svg
+set decimalsign locale
+set out "C_plot.svg"
+set xlabel "x"
+set ylabel "y"
+set size ratio -1
+set encoding utf8
+set key top right
+set xzeroaxis
+set yzeroaxis
+set yrange [-0.6:0.6]
+set title "Newton gravitational 3 body problem"
+
+
+plot "c_out.txt" using ($2):($3) with lines lw 3 title "m1"\
+	,"c_out.txt" using ($4):($5) with lines lw 2 title "m2"\
+	,"c_out.txt" using ($6):($7) with lines lw 1 lc rgb "yellow" title "m3"\
+
+
+
+	
+
