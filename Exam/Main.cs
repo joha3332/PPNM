@@ -7,17 +7,16 @@ class  main
     static void Main(){
 
     //// Del A ////
-        matrix A= new matrix(3,3);
-        A[0,0]=2; A[0,1]=4; A[0,2]=-3;
-        A[1,0]=4; A[1,1]=14; A[1,2]=-9;
-        A[2,0]=-3; A[2,1]=-9; A[2,2]=12;
-    	
-    	var cd1=new cholesky(A);
 
-    	var L=cd1.L;
-    	var LT=cd1.LT;
+        int n=3;
+        matrix A=rand_matrix(n);
     	
-    	WriteLine("_____________________________________");
+    	var cd=new cholesky(A);
+
+    	var L=cd.L;
+    	var LT=cd.LT;
+    	
+    	WriteLine("_____________________________________");WriteLine();
     	WriteLine("Part A - decomposit A into L*LT");
     	(A).print("Matrix A=");WriteLine();
     	(L).print("Matrix L=");WriteLine();
@@ -25,45 +24,50 @@ class  main
     	
     	WriteLine("Check if L*LT=A");
     	matrix LLT=L*LT;
-    	LLT.print("L*LT=");
-        if(A.approx(LLT)){WriteLine("L*LT=A\nTest passed");}
-        else {WriteLine("L*LT!=A\nTest failed");}
+    	LLT.print("L*LT=");WriteLine();
+        if(A.approx(LLT)){WriteLine("L*LT=A\tTEST PASSED");}
+        else {WriteLine("L*LT!=A\tTEST FAILED");}
 
 
     //// Del B ////
-        matrix B= new matrix(3,3);
-        B[0,0]=36; B[0,1]=30; B[0,2]=18;
-        B[1,0]=30; B[1,1]=41; B[1,2]=23;
-        B[2,0]=18; B[2,1]=23; B[2,2]=14;
 
-        vector c= new vector(288,296,173);
-        vector b=c.copy();
-        b.print("Vector b=");WriteLine();
+        vector v=rand_vector(n);
+        vector b=v.copy();
         
-        var cd2=new cholesky(B);
-        vector x=cd2.solve(c);
+        vector x=cd.solve(v);
 
-        WriteLine("_____________________________________");
-        WriteLine("Part B - Solving linear equation");
-        B.print("Matrix B=");WriteLine();
+        WriteLine("_____________________________________");WriteLine();
+        WriteLine("Part B - Solving linear equation: A*x=b");
+        A.print("Matrix A=");WriteLine();
         b.print("Vector b=");WriteLine();
         x.print("Solution x=");WriteLine();
 
-        vector Bx=(B*x);
-        Bx.print("Check B*x=");
-        if(b.approx(Bx)){WriteLine("B*x=b   Test passed");}
-        else {WriteLine("B*x!=b  Test failed");}
+        vector Ax=(A*x);
+        Ax.print("Check A*x=");WriteLine();
+
+        if(b.approx(Ax)){WriteLine("A*x=b   TEST PASSED");}
+        else {WriteLine("A*x!=b  TEST FAILED");}
 
      //// Del C ////
-        WriteLine("_____________________________________");
+
+        WriteLine("_____________________________________");WriteLine();
         WriteLine("Part C - Determinant of A");
-        double D=cd1.determinant();
+        double D=cd.determinant();
         WriteLine($"det(A)={D}");WriteLine();
+
+        if(n==3){
+            double D_alt= A[0,0]*A[1,1]*A[2,2] + A[0,1]*A[1,2]*A[2,0]
+            + A[0,2]*A[1,0]*A[2,1] - A[0,2]*A[1,1]*A[2,0]
+            - A[0,1]*A[1,0]*A[2,2] - A[1,2]*A[2,1]*A[0,0];
+            if(matrix.approx(D_alt,D)){WriteLine("TEST PASSED");}
+            else {WriteLine("TEST FAILED");}
+        }
         
     //// Del D ////
-        WriteLine("_____________________________________");
+
+        WriteLine("_____________________________________");WriteLine();
         WriteLine("Part D - find the inverse matrix of A");
-        var A_inv=cd1.inverse();
+        var A_inv=cd.inverse();
         A_inv.print("A_inv=");WriteLine();
         
         WriteLine("Check if A_inv is the inverse:");WriteLine();
@@ -72,20 +76,40 @@ class  main
         matrix AA_inv2=A*A_inv;
         AA_inv2.print("A_inv*A=");WriteLine();
 
-        int n=A.size1;
-        matrix I= new matrix(n,n);
-        for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-        if(i==j) I[i,j]=1;
-        else    I[i,j]=0;
-        }
-        }
 
-        if(I.approx(AA_inv1) || I.approx(AA_inv2)){WriteLine("A*A_inv=I\nTest passed");}
-        else {WriteLine("A*A_inv=I\nTest failed");}
+        matrix I= matrix.id(n);
 
-
+        if(I.approx(AA_inv1) && I.approx(AA_inv2)){WriteLine("A*A_inv=I\tTEST PASSED");}
+        else {WriteLine("A*A_inv=I\tTEST FAILED");}
     } //Method: Main
+
+
+    // Generate a random real symmetric positive-definite matrix
+    // If A is a real matrix, then A*A^t will be symmetric positive-definite
+    static matrix rand_matrix(int n){
+        matrix M= new matrix(n,n);
+        var rand= new Random(1);
+    
+        for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+        M[i,j]=2*(rand.NextDouble()-0.5);
+    
+        M=M*M.transpose()/n;
+        return M;
+    } //Method: rand_matrix
+
+
+    // Generate a random real vector
+    static vector rand_vector(int n){
+        vector v= new vector(n);
+        var rand= new Random(1);
+    
+        for(int i=0;i<n;i++)
+        v[i]=2*(rand.NextDouble()-0.5);
+
+        return v;
+    } //Method: rand_matrix
+
 }// class: main
 
 
