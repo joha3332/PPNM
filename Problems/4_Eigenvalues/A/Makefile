@@ -24,12 +24,12 @@ A2_out.txt a2_data.txt: mainA2.exe
 LIBDIR = ../../matlib
 MATRIX = $(LIBDIR)/matrix/matrix.cs
 VECTOR = $(LIBDIR)/matrix/vector.cs
-JACOBI = jacobi.cs
-SOLVER =$(GSDIR)/gs.cs
+JACOBI = ../lib/jacobi.cs
+
 
 matlib.dll: $(MATRIX) $(VECTOR) $(JACOBI)
 	mcs $^ -target:library -out:$@
-
+		
 
 clean:
 	rm -f *.exe out* *.dll *.svg *.txt

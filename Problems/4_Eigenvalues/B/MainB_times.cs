@@ -10,7 +10,7 @@ static void Main(){
 	
 //////   Elapsed time for row by row method of first eigenvalue
 	WriteLine();WriteLine();
-for(int n=200;n<400;n+=5){
+for(int n=70;n<500;n+=50){
 	var rand= new Random(1);
 
 	matrix A= new matrix(n,n);
@@ -19,7 +19,7 @@ for(int n=200;n<400;n+=5){
 	
 	
 	for(int i=0;i<n;i++) for(int j=i;j<n;j++){
-		A[i,j]=rand.NextDouble();
+		A[i,j]=2*(rand.NextDouble()-0.5);
 		A[j,i]=A[i,j];
 	}
 
@@ -36,7 +36,7 @@ for(int n=200;n<400;n+=5){
 
 /////////   Elapsed time for row by row method
 	WriteLine();WriteLine();
-for(int n=40;n<101;n+=5){
+for(int n=40;n<91;n+=10){
 	var rand= new Random(1);
 
 	matrix A= new matrix(n,n);
@@ -63,7 +63,7 @@ for(int n=40;n<101;n+=5){
 //Elapsed time for cyclic method
 
 	WriteLine();WriteLine();
-for(int n=40;n<200;n+=5){
+for(int n=40;n<301;n+=20){
 	var rand= new Random(1);
 
 	matrix A= new matrix(n,n);
@@ -79,7 +79,7 @@ for(int n=40;n<200;n+=5){
 	matrix B=A.copy();
 	Stopwatch cyclic_time = new Stopwatch();
 	cyclic_time.Start();
-	int sweeps=jacobi.cyclic(B,e,V);
+	int sweeps=jacobi.cyclic(B,e,V)*n*(n-1)/2;
 	cyclic_time.Stop();
 
 

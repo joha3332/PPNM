@@ -65,6 +65,6 @@ static void Main(){
 	Error.WriteLine($"Solve the ODE up to t={tb}");
 
 	for(int i=0;i<ts.Count;i++)
-		WriteLine($"{ts[i]} {ys[i][0]} {ys[i][1]} {ys[i][2]} {ys[i][3]} {ys[i][4]} {ys[i][5]}");
+		WriteLine($"{ts[i]}\t{ys[i][0]}\t{ys[i][1]}\t{ys[i][2]}\t{ys[i][3]}\t{ys[i][4]}\t{ys[i][5]}");
 } // Method:Main
 } // Class:Main

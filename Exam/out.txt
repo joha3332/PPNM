@@ -1,0 +1,64 @@
+_____________________________________
+Part A - decomposit A into L*LT
+Matrix A=
+         2          4         -3 
+         4         14         -9 
+        -3         -9         12 
+
+Matrix L=
+      1,41          0          0 
+      2,83       2,45          0 
+     -2,12      -1,22       2,45 
+
+Matrix LT=
+      1,41       2,83      -2,12 
+         0       2,45      -1,22 
+         0          0       2,45 
+
+Check if L*LT=A
+L*LT=
+         2          4         -3 
+         4         14         -9 
+        -3         -9         12 
+L*LT=A
+Test passed
+Vector b=       288        296        173 
+
+_____________________________________
+Part B - Solving linear equation
+Matrix B=
+        36         30         18 
+        30         41         23 
+        18         23         14 
+
+Vector b=       288        296        173 
+
+Solution x=         5          3          1 
+
+Check B*x=       288        296        173 
+B*x=b   Test passed
+_____________________________________
+Part C - Determinant of A
+det(A)=72
+
+_____________________________________
+Part D - find the inverse matrix of A
+A_inv=
+      1,21     -0,292     0,0833 
+    -0,292      0,208     0,0833 
+    0,0833     0,0833      0,167 
+
+Check if A_inv is the inverse:
+
+A*A_inv=
+         1   1,11e-16          0 
+ -5,55e-16          1          0 
+  4,44e-16   2,22e-16          1 
+
+A_inv*A=
+         1   1,11e-16          0 
+ -5,55e-16          1          0 
+  4,44e-16   2,22e-16          1 
+
+A*A_inv=I
+Test passed

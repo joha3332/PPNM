@@ -18,7 +18,7 @@ int n=5;
 	
 	
 	for(int i=0;i<n;i++) for(int j=i;j<n;j++){
-		A[i,j]=rand.NextDouble();
+		A[i,j]=2*(rand.NextDouble()-0.5);
 		A[j,i]=A[i,j];
 	}
 
@@ -33,11 +33,18 @@ int n=5;
 	(D).print("Should be a diagonal matrix V.T*B*V=");WriteLine();
 	e.print("Eigenvalues should equal the diagonal elements above"); WriteLine();
 
+	vector D_diagonal = new vector(n);
+	for(int i=0;i<n;i++) D_diagonal[i]=D[i,i];
+	if(D_diagonal.approx(e)){WriteLine("Test passed");}
+        else {WriteLine("Test failed");}
+
 	matrix A2=(V*D*V.T);
 	(A2).print("Check that V*D*V.T=A"); WriteLine();
+	if(A2.approx(A)){WriteLine("V*D*V.T = A \tTest passed");}
+        else {WriteLine("V*D*V.T != A \tTest failed");}
 
 
-
+WriteLine();WriteLine();
 WriteLine("/////////////// Find only the higest eigen values///////////////");
 
 	vector e1= new vector(n);
@@ -53,5 +60,12 @@ WriteLine("/////////////// Find only the higest eigen values///////////////");
 
 	matrix D1=(V1.T*A*V1);
 	(D1).print("First two diagonal elements should be the two higest eigenvalues");
+	
+	WriteLine();
+	vector D1_diagonal2highest= new vector(D1[0,0], D1[1,1]);
+	vector D_diagonal2highest= new vector(D[n-1,n-1], D[n-2,n-2]);
+	if(D1_diagonal2highest.approx(D_diagonal2highest)){WriteLine("Eigenvalues match \tTest passed");}
+        else {WriteLine("Eigenvalues do not match \tTest failed");}
+
 }
 }

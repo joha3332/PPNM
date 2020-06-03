@@ -23,11 +23,14 @@ mainB_times.exe: MainB_times.cs matlib.dll
 LIBDIR = ../../matlib
 MATRIX = $(LIBDIR)/matrix/matrix.cs
 VECTOR = $(LIBDIR)/matrix/vector.cs
+LIB = ../lib
+JACOBI = $(LIB)/jacobi.cs
+JACOBI_ROW = $(LIB)/jacobi_row.cs
 
 
-matlib.dll: $(MATRIX) $(VECTOR) jacobi.cs jacobi_row.cs
+matlib.dll: $(MATRIX) $(VECTOR) $(JACOBI) $(JACOBI_ROW)
 	mcs $^ -target:library -out:$@
 
 
 clean:
-	rm -f *.exe out* *.dll *.svg *.txt
+	rm -f *.exe *.dll *.svg *.txt *.log

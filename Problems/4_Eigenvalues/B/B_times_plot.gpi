@@ -1,26 +1,37 @@
-set term svg
+set term svg size 600, 800
 set decimalsign locale
 set out "B_times_plot.svg"
 set encoding utf8
-set key bottom left
+set key bottom right
 set xzeroaxis
 set yzeroaxis
 set log y;
 set log x;
-set title "Execution times"
-set xlabel "matrix size n";
+set multiplot layout 2,1
+
+
+set title "Execution times \n Clearly the row-by-row method is very unstable for single eigenvalues"
+set xlabel "Matrix size n";
 set ylabel "Execution time t, ms";
 
 bc=1; ac=10; cc=3;
-bv=1; av=10; cv=3;
 fc(x)=bc+(x/ac)**cc;
-fit fc(x) "B_times_out.txt" index 2 via ac,bc;
+fit fc(x) "B_times_out.txt" index 2 via ac,bc,cc;
 
 
-plot [30:250][] "B_times_out.txt" index 0 using ($1):($2) pointtype 5 title "Row-method (first value)"\
+plot [30:600][] "B_times_out.txt" index 0 using ($1):($2) pointtype 5 title "Row-method (first value)"\
 	,"B_times_out.txt" index 1 using ($1):($2) pointtype 5 title "Row-method"\
 	,"B_times_out.txt" index 2 using ($1):($2) pointtype 7 title "Cyclic-method"\
-	,fc(x) title sprintf("Fit cyclic-method: (n/%.f)^{%.2f} %.3f",ac,cc,bc) \
+	,fc(x) title sprintf("Fit cyclic-method: (n/%.f)^{%.2f} + %.3f",ac,cc,bc) \
+
+
+set title "Number of rotations: cyclic vs row-by-row"
+set xlabel "Matrix size n";
+set ylabel "Number of rotations";
+
+plot [30:600][] "B_times_out.txt" index 0 using ($1):($3) pointtype 5 title "Row-method (first value)"\
+	,"B_times_out.txt" index 1 using ($1):($3) pointtype 5 title "Row-method"\
+	,"B_times_out.txt" index 2 using ($1):($3) pointtype 7 title "Cyclic-method"\
 
 	
 

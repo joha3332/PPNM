@@ -26,11 +26,19 @@ WriteLine("/////////////// Part A - Test on random matrix ///////////////");
 	WriteLine($"Number of sweeps in jacobi={sweeps}"); WriteLine();
 
 	matrix D=(V.T*A*V);
-	(D).print("Should be a diagonal matrix V.T*B*V=");WriteLine();
-	e.print("Eigenvalues should equal the diagonal elements above"); WriteLine();
+	(D).print("Should be a diagonal matrix V.T*B*V="); WriteLine();
+	e.print("Eigenvalues should equal the diagonal elements above");
+
+	vector D_diagonal = new vector(n);
+	for(int i=0;i<n;i++) D_diagonal[i]=D[i,i];
+	if(D_diagonal.approx(e)){WriteLine("Eigenvalues agree \tTest passed");}
+        else {WriteLine("Test failed");}
+     WriteLine();
 
 	matrix A2=(V*D*V.T);
-	(A2).print("Check that V*D*V.T=A"); WriteLine();
+	(A2).print("Check that V*D*V.T=A");
+	if(A2.approx(A)){WriteLine("V*D*V.T = A \tTest passed");}
+    else {WriteLine("V*D*V.T != A \tTest failed");}
 
 }
 }
