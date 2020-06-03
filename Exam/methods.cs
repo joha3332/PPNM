@@ -5,9 +5,10 @@ public double determinant(){
 	int n=L.size1;
 	double D=1;
 
+//The determinant of a triangular matrix is a product of the diagonal elements
 	for(int i=0; i<n; i++)
 		D*=L[i,i];
-	D*=D;
+	D*=D; 	//det(A)= det(L)*det(LT) = det(L)*det(L)
 	return D;
 }
 

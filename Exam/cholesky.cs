@@ -33,9 +33,4 @@ public cholesky(matrix A){
 	}
 }// Class-constructor
 
-
-
-
-
-
 }//class:cholesky
