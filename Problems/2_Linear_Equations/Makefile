@@ -1,11 +1,9 @@
-all: out.txt
-
-out.txt: main.exe
+Out.txt: Main.exe
 	mono $< > $@
 
 DLLS = gs.dll matlib.dll
 
-main.exe:	Main.cs $(DLLS)
+Main.exe:	Main.cs $(DLLS)
 	mcs $< -reference:$(call clist,$(DLLS))
 
 ####   Matlib   ####
@@ -22,7 +20,7 @@ gs.dll:$(SOLVERS) matlib.dll
 	mcs $(SOLVERS) -target:library -out:$@ -reference:$(lastword $^)
 
 clean:
-	rm -f *.exe out* *.dll *.svg
+	rm -f *.exe Out* *.dll *.svg
 
 comma:=,
 empty:=
