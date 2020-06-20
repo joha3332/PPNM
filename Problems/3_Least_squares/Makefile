@@ -1,24 +1,22 @@
-all: PlotA.svg B_fitoutput.txt PlotC.svg
+all: PlotA.svg AB_out.txt PlotC.svg
 
 PlotA.svg: PlotA.gpi data.txt
 	gnuplot $<
 
-data.txt B_fitoutput.txt: main.exe
-	mono main.exe 1>data.txt 2>B_fitoutput.txt
+data.txt AB_out.txt: Main.exe
+	mono Main.exe 1>data.txt 2>AB_out.txt
 
 PlotC.svg: PlotC.gpi data.txt
 	gnuplot $<
 
-DLLS = matlib.dll
-
-main.exe:	Main.cs lsfit.cs $(DLLS)
-	mcs $(filter-out %.dll,$^) -reference:$(DLLS)
+Main.exe:	Main.cs lsfit.cs matlib.dll
+	mcs $(filter-out %.dll,$^) -reference:matlib.dll
 
 ####   Matlib   ####
 LIBDIR = ../matlib
 MATRIX = $(LIBDIR)/matrix/matrix.cs
 VECTOR = $(LIBDIR)/matrix/vector.cs
-GSDIR = ../2_Linear_Equations
+GSDIR = ../2_Linear_Equations/AB
 SOLVER =$(GSDIR)/gs.cs
 
 matlib.dll: $(MATRIX) $(VECTOR) $(SOLVER)

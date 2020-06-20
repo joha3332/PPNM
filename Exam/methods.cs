@@ -1,4 +1,3 @@
-using static System.Math;
 public partial class cholesky{
 
 public double determinant(){

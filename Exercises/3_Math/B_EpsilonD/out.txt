@@ -1,0 +1,7 @@
+Tolerance: 
+ abs: 1e-9 
+ rel: 1e-9
+1 approx 1,00000001 	 False
+1 approx 1,0000000001 	 True
+1 approx 1,00000001 	 False
+1 approx 1,0000000001 	 True

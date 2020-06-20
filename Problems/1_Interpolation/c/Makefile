@@ -1,14 +1,11 @@
-All: PlotC.svg
-
-#### Part B #####
 PlotC.svg: PlotC.gpi out_cspline.txt
 	gnuplot $<
 
 
-out_cspline.txt: mainC.exe $(INPUT)
-	mono mainC.exe $(INPUT) out_cspline.txt out_cspline_slope.txt out_cspline_integral.txt
+out_cspline.txt: MainC.exe $(INPUT)
+	mono MainC.exe $(INPUT) out_cspline.txt out_cspline_slope.txt out_cspline_integral.txt
 
-mainC.exe:	MainC.cs spline.dll
+MainC.exe:	MainC.cs spline.dll
 	mcs -reference:spline.dll $<
 
 INPUT = ../lib/input.txt

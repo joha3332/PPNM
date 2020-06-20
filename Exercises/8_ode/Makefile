@@ -1,4 +1,3 @@
-
 all: odeA.svg odeB.svg
 
 ####   Del A    ####	
@@ -44,4 +43,4 @@ matlib.dll: $(VECTOR) $(MATRIX) $(ODE)
 
 
 clean:
-	rm -f *.dll *.exe out*
+	rm -f *.dll *.exe *.txt *.svg out*

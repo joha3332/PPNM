@@ -11,7 +11,7 @@ comparison.exe:	comparison.cs matlib.dll
 LIBDIR = ../../Problems/matlib
 MATRIX = $(LIBDIR)/matrix/matrix.cs
 VECTOR = $(LIBDIR)/matrix/vector.cs
-GS = ../../Problems/2_Linear_Equations/gs.cs
+GS = ../../Problems/2_Linear_Equations/AB/gs.cs
 CHOLESKY = ../cholesky.cs
 METHODS = ../methods.cs
 

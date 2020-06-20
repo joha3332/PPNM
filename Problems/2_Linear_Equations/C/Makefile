@@ -8,7 +8,7 @@ MainC.exe:	MainC.cs matlib.dll
 LIBDIR = ../../matlib
 MATRIX = $(LIBDIR)/matrix/matrix.cs
 VECTOR = $(LIBDIR)/matrix/vector.cs
-GS = ../gs.cs
+GS = ../AB/gs.cs
 
 matlib.dll: $(MATRIX) $(VECTOR) givens.cs $(GS)
 	mcs $^ -target:library -out:$@

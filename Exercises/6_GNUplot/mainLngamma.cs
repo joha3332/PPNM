@@ -1,7 +1,6 @@
 using static System.Console;
 using static System.Math;
 using static math;
-using static cmath;
 class mainLngamma{
 	static int Main()
 	{
@@ -16,8 +15,6 @@ class mainLngamma{
 		WriteLine("lngamma({0}+{1}i)={2}", z2.Re, z2.Im, lngamma(z2));
 		WriteLine("lngamma({0}+{1}i)={2}", z3.Re, z3.Im, lngamma(z3));
 		WriteLine("lngamma({0}+{1}i)={2}", z4.Re, z4.Im, lngamma(z4));
-WriteLine("ln(cgamma({0}+{1}i)={2}", z3.Re, z3.Im, log(cgamma(z3)));
-WriteLine("ln(cgamma({0}+{1}i)={2}", z4.Re, z4.Im, log(cgamma(z4)));
 
 
 	return 0;

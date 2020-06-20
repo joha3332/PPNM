@@ -1,6 +1,6 @@
 all: Gamma.svg Erf.svg out.Lngamma.txt
 
-Gamma.svg: gamma.gpi out.gamma.txt out.gamma.test.txt
+Gamma.svg: Gamma.gpi out.gamma.txt out.gamma.test.txt
 	gnuplot $<
 
 out.gamma.txt out.gamma.test.txt: mainGamma.exe
@@ -10,7 +10,7 @@ mainGamma.exe: mainGamma.cs math.dll
 	mcs $< -out:$@ -reference:math.dll
 
 ################################################
-Erf.svg: erf.gpi out.erf.txt out.erf.test.txt
+Erf.svg: Erf.gpi out.erf.txt out.erf.test.txt
 	gnuplot $<		
 
 out.erf.txt out.erf.test.txt: mainErf.exe
@@ -26,11 +26,12 @@ out.Lngamma.txt: mainLngamma.exe
 mainLngamma.exe: mainLngamma.cs math.dll cmath.dll
 	mcs $< -out:$@ -reference:math.dll -reference:cmath.dll
 
-LIBDIR = ../matlib
-cmath = $(LIBDIR)/cmath/cmath.dll
 
-math.dll: math.cs $(cmath)
-	mcs $< -target:library -out:$@ -reference:$(cmath)
+cmath.dll: lib/cmath.cs lib/complex.cs 
+	mcs $^ -target:library -out:$@
+
+math.dll: math.cs cmath.dll
+	mcs $< -target:library -out:$@ -reference:cmath.dll
 
 clean:
 	rm -f *.dll *.exe out* *.svg

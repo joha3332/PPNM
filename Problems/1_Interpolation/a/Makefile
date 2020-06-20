@@ -1,12 +1,10 @@
-All: PlotA.svg
-
 PlotA.svg: PlotA.gpi out_lspline.txt out_lspline_integral.txt
 	gnuplot $<
 
-out_lspline.txt: mainA.exe $(INPUT)
-	mono mainA.exe $(INPUT) out_lspline.txt out_lspline_integral.txt
+out_lspline.txt: MainA.exe $(INPUT)
+	mono MainA.exe $(INPUT) out_lspline.txt out_lspline_integral.txt
 
-mainA.exe:	MainA.cs spline.dll
+MainA.exe:	MainA.cs spline.dll
 	mcs -reference:spline.dll $<
 
 INPUT = ../lib/input.txt

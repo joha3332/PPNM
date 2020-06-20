@@ -1,13 +1,10 @@
-All: PlotB.svg 
-
-#### Part B #####
 PlotB.svg: PlotB.gpi out_qspline.txt
 	gnuplot $<
 
-out_qspline.txt: mainB.exe $(INPUT)
-	mono mainB.exe $(INPUT) out_qspline.txt out_qspline_slope.txt out_qspline_integral.txt
+out_qspline.txt: MainB.exe $(INPUT)
+	mono MainB.exe $(INPUT) out_qspline.txt out_qspline_slope.txt out_qspline_integral.txt
 
-mainB.exe:	MainB.cs spline.dll
+MainB.exe:	MainB.cs spline.dll
 	mcs -reference:spline.dll $<
 
 INPUT = ../lib/input.txt

@@ -1,7 +1,7 @@
 
 
 *******************************************************************************
-Wed Jun  3 12:24:48 2020
+Thu Jun 18 17:16:26 2020
 
 
 FIT:    data read from "Out_times.txt" using ($1):($3)
@@ -14,32 +14,32 @@ function used for fitting: fc(x)
 fitted parameters initialized with current variable values
 
 iter      chisq       delta/lim  lambda   ac            bc            cc           
-   0 1.9370093139e+12   0.00e+00  3.77e+06    1.000000e+01   1.000000e+00   3.000000e+00
-  12 2.0485404714e+06  -3.06e-01  3.77e-06    6.846159e+01   4.329590e+02   3.445102e+00
+   0 1.9394987266e+12   0.00e+00  3.77e+06    1.000000e+01   1.000000e+00   3.000000e+00
+  12 2.3701034463e+06  -4.48e-01  3.77e-06    8.292360e+01   3.585465e+02   3.697321e+00
 
 After 12 iterations the fit converged.
-final sum of squares of residuals : 2.04854e+06
-rel. change during last iteration : -3.05824e-06
+final sum of squares of residuals : 2.3701e+06
+rel. change during last iteration : -4.4756e-06
 
 degrees of freedom    (FIT_NDF)                        : 6
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 584.314
-variance of residuals (reduced chisquare) = WSSR/ndf   : 341423
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 628.504
+variance of residuals (reduced chisquare) = WSSR/ndf   : 395017
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-ac              = 68.4616          +/- 26.32        (38.44%)
-bc              = 432.959          +/- 388.7        (89.77%)
-cc              = 3.4451           +/- 0.4899       (14.22%)
+ac              = 82.9236          +/- 32.4         (39.07%)
+bc              = 358.546          +/- 398.3        (111.1%)
+cc              = 3.69732          +/- 0.5761       (15.58%)
 
 correlation matrix of the fit parameters:
                 ac     bc     cc     
 ac              1.000 
-bc              0.745  1.000 
-cc              0.999  0.725  1.000 
+bc              0.726  1.000 
+cc              0.999  0.706  1.000 
 
 
 *******************************************************************************
-Wed Jun  3 12:24:48 2020
+Thu Jun 18 17:16:26 2020
 
 
 FIT:    data read from "Out_times.txt" using ($1):($2)
@@ -52,25 +52,25 @@ function used for fitting: fd(x)
 fitted parameters initialized with current variable values
 
 iter      chisq       delta/lim  lambda   ad            bd            cd           
-   0 1.9634812516e+12   0.00e+00  3.77e+06    1.000000e+01   1.000000e+00   3.000000e+00
-  12 3.3358185985e+05  -4.88e-01  3.77e-06    1.475783e+02   6.924981e+01   4.351761e+00
+   0 1.9646886889e+12   0.00e+00  3.77e+06    1.000000e+01   1.000000e+00   3.000000e+00
+  11 1.0727860848e+05  -1.81e-02  3.77e-05    7.751132e+01  -2.492893e+01   3.199951e+00
 
-After 12 iterations the fit converged.
-final sum of squares of residuals : 333582
-rel. change during last iteration : -4.88194e-06
+After 11 iterations the fit converged.
+final sum of squares of residuals : 107279
+rel. change during last iteration : -1.81043e-07
 
 degrees of freedom    (FIT_NDF)                        : 6
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 235.79
-variance of residuals (reduced chisquare) = WSSR/ndf   : 55597
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 133.715
+variance of residuals (reduced chisquare) = WSSR/ndf   : 17879.8
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-ad              = 147.578          +/- 39.16        (26.54%)
-bd              = 69.2498          +/- 135.6        (195.7%)
-cd              = 4.35176          +/- 0.601        (13.81%)
+ad              = 77.5113          +/- 19.06        (24.58%)
+bd              = -24.9289         +/- 93.96        (376.9%)
+cd              = 3.19995          +/- 0.3047       (9.522%)
 
 correlation matrix of the fit parameters:
                 ad     bd     cd     
 ad              1.000 
-bd              0.686  1.000 
-cd              0.999  0.662  1.000 
+bd              0.767  1.000 
+cd              0.999  0.746  1.000 
