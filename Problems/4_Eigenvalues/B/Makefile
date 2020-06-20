@@ -1,10 +1,10 @@
 all:  B_out.txt B_times_out.txt B_times_plot.svg 
 
 
-B_out.txt: mainB.exe
-	mono mainB.exe > B_out.txt 
+B_out.txt: MainB.exe
+	mono MainB.exe > B_out.txt 
 
-mainB.exe: MainB.cs matlib.dll
+MainB.exe: MainB.cs matlib.dll
 	mcs MainB.cs -reference:matlib.dll
 
 
@@ -12,11 +12,11 @@ mainB.exe: MainB.cs matlib.dll
 B_times_plot.svg: B_times_plot.gpi B_times_out.txt
 	gnuplot $<
 
-B_times_out.txt: mainB_times.exe
-	mono mainB_times.exe > B_times_out.txt  
+B_times_out.txt: MainB_times.exe
+	mono MainB_times.exe > B_times_out.txt  
 
 
-mainB_times.exe: MainB_times.cs matlib.dll
+MainB_times.exe: MainB_times.cs matlib.dll
 	mcs MainB_times.cs -reference:matlib.dll
 
 ####   Matlib   ####

@@ -1,0 +1,28 @@
+Integral from 0 to 1 of 1/Sqrt(x), acc=0,001 eps=0,001
+result 1,99999201046432 	 calls 16
+exact result 2
+Tolerance 0,00299999201046432 	 Error estimate 0,00084812279831497 	 Real error 7,98953567748839E-06
+test passed
+
+Integral from 0 to 1 of Log(x)/Sqrt(x), acc=0,001 eps=0,001
+result -3,9997548866493 	 calls 80
+exact result -4
+Tolerance 0,0049997548866493 	 Error estimate 0,00147624096831699 	 Real error 0,000245113350704873
+test passed
+
+_________________________________________________________
+Integral from 0 to 1 of 4*Sqrt(1-x*x), acc=1E-16 eps=1E-16
+exact result 3,14159265358979
+
+By Clenshaw–Curtis method
+Result 3,14159265358979 	 calls 7431808
+Tolerance 4,14159265358979E-16 	 Error estimate 5,30507238973032E-17 	 Real error 0
+
+By adaptive order 4
+result 3,14159265358979 	 calls 5893164
+Tolerance 4,14159265358979E-16 	 Error estimate 4,65475768317571E-17 	 Real error 0
+
+By o8av
+result 3,14159265358979 	 calls 1072
+All algorithems can calculate the value of the integral up to a machine epsilon.
+However Clenshaw–Curtis requires more function evaluations, while o8av, can do with the least.

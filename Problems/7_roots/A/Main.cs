@@ -1,5 +1,4 @@
 using System;
-using static System.Math;
 using static System.Console;
 class main{
 static void Main(){
@@ -23,6 +22,8 @@ Func<vector,vector> f = delegate(vector z){
 		r[1]=100*2*(y-x*x);
 		return r;
 	};
+
+WriteLine($"Minimum of  Rosenbrock's valley function, by findeing roots of gradient.");
 
 double eps=1e-4;
 vector p= new vector(2);

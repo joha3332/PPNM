@@ -1,7 +1,6 @@
 using System;
 using static System.Console;
 using static System.Math;
-using System.IO;
 
 class main{
 static void Main(){

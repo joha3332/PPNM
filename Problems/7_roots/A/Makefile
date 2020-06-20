@@ -1,4 +1,4 @@
-out.txt: Main.exe
+Out.txt: Main.exe
 	mono $< > $@
 
 
@@ -15,7 +15,7 @@ roots.dll:jacobian.cs newton.cs matlib.dll
 LIBDIR = ../../matlib
 MATRIX = $(LIBDIR)/matrix/matrix.cs
 VECTOR = $(LIBDIR)/matrix/vector.cs
-GSDIR = ../../2_Linear_Equations
+GSDIR = ../../2_Linear_Equations/AB
 SOLVER =$(GSDIR)/gs.cs
 
 matlib.dll: $(MATRIX) $(VECTOR) $(SOLVER)
@@ -23,7 +23,7 @@ matlib.dll: $(MATRIX) $(VECTOR) $(SOLVER)
 
 
 clean:
-	rm -f *.exe out* *.dll
+	rm -f *.exe Out* *.dll
 
 comma:=,
 empty:=

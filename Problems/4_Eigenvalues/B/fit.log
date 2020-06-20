@@ -1,7 +1,7 @@
 
 
 *******************************************************************************
-Thu May 28 15:50:19 2020
+Sat Jun 20 15:49:51 2020
 
 
 FIT:    data read from "B_times_out.txt" index 2
@@ -14,25 +14,25 @@ function used for fitting: fc(x)
 fitted parameters initialized with current variable values
 
 iter      chisq       delta/lim  lambda   ac            bc            cc           
-   0 1.5875521270e+09   0.00e+00  7.07e+04    1.000000e+01   1.000000e+00   3.000000e+00
-   8 2.5800825123e+04  -3.97e-01  7.07e-04    2.925716e+01   8.251930e+00   3.402312e+00
+   0 1.6059689650e+09   0.00e+00  7.07e+04    1.000000e+01   1.000000e+00   3.000000e+00
+   8 2.0153358873e+04  -1.34e-01  7.07e-04    2.564492e+01   4.299980e+00   3.189398e+00
 
 After 8 iterations the fit converged.
-final sum of squares of residuals : 25800.8
-rel. change during last iteration : -3.96534e-06
+final sum of squares of residuals : 20153.4
+rel. change during last iteration : -1.34293e-06
 
 degrees of freedom    (FIT_NDF)                        : 11
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 48.4307
-variance of residuals (reduced chisquare) = WSSR/ndf   : 2345.53
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 42.8033
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1832.12
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-ac              = 29.2572          +/- 2.444        (8.354%)
-bc              = 8.25193          +/- 24.19        (293.2%)
-cc              = 3.40231          +/- 0.1222       (3.591%)
+ac              = 25.6449          +/- 2.18         (8.5%)
+bc              = 4.29998          +/- 22.28        (518.1%)
+cc              = 3.1894           +/- 0.1101       (3.453%)
 
 correlation matrix of the fit parameters:
                 ac     bc     cc     
 ac              1.000 
-bc              0.719  1.000 
-cc              0.999  0.694  1.000 
+bc              0.735  1.000 
+cc              0.999  0.711  1.000 

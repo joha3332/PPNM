@@ -1,3 +1,4 @@
+Minimum of  Rosenbrock's valley function, by findeing roots of gradient.
 Start point:        10         10 
 n_calls=6367
 Root of f =         1          1 

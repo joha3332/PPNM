@@ -1,9 +1,7 @@
-all: B_plot.svg
-
-B_plot.svg: b_plot.gpi data.txt
+B_plot.svg: b_plot.gpi Data.txt
 	gnuplot $<
 
-data.txt: Main.exe
+Data.txt: Main.exe
 	mono $< 1> $@ 2> logB.txt
 
 
@@ -23,7 +21,7 @@ roots.dll: $(NEWTON) $(JACOBIAN) matlib.dll
 MATRIX = ../../matlib/matrix/matrix.cs
 VECTOR = ../../matlib/matrix/vector.cs
 
-SOLVER =../../2_Linear_Equations/gs.cs
+SOLVER =../../2_Linear_Equations/AB/gs.cs
 
 DRIVER = ../../5_ODE/A/driver.cs
 STEPPER = ../../5_ODE/A/rkstep23.cs
@@ -33,7 +31,7 @@ matlib.dll: $(MATRIX) $(VECTOR) $(SOLVER) $(DRIVER) $(STEPPER)
 
 
 clean:
-	rm -f *.exe out* *.dll
+	rm -f *.exe *.dll *.txt *.svg
 
 comma:=,
 empty:=

@@ -1,5 +1,3 @@
-all: B_plot.svg
-
 B_plot.svg: b_plot.gpi b_out.txt
 	gnuplot $<
 

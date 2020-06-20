@@ -1,5 +1,3 @@
-All: OutA.txt OutB.txt
-
 ################# Part A #################
 OutA.txt: MainA.exe
 	mono MainA.exe 1> $@ 2> logA.txt
@@ -7,15 +5,12 @@ OutA.txt: MainA.exe
 MainA.exe: MainA.cs matlib.dll
 	mcs MainA.cs -reference:matlib.dll
 
-################# Part B #################
-OutB.txt: MainB.exe
-	mono MainB.exe 1> $@ 2> logB.txt
-
-MainB.exe: MainB.cs matlib.dll
-	mcs MainB.cs -reference:matlib.dll
 ################# Lib #################
+LIB = ../lib
+QUAD = $(LIB)/quad.cs
+OQCC = $(LIB)/OQCC.cs
 
-matlib.dll:quad.cs OQCC.cs
+matlib.dll: $(QUAD) $(OQCC)
 	mcs $^ -target:library -out:$@
 
 
