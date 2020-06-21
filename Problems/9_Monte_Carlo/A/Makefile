@@ -2,13 +2,12 @@ Out.txt: Main.exe
 	mono $< >$@ 2>log.txt
 
 Main.exe: Main.cs mcintegrator.dll matlib.dll
-	mcs $< -r:$(call clist,$(filter %.dll,$^))
+	mcs $< -r:mcintegrator.dll -r:matlib.dll
 
 MC = ../lib/mcintegrator.cs
 
 mcintegrator.dll: $(MC) matlib.dll
-	src="$(filter %.cs,$^)"; libs="$(call clist,$(filter %.dll,$^))";\
-	mcs $$src -t:library -r:$$libs -out:$@
+	mcs $(MC) -t:library -r:matlib.dll -out:$@
 
 ####   Matlib  ####
 LIBDIR = ../../matlib
@@ -20,9 +19,4 @@ matlib.dll: $(MATRIX) $(VECTOR)
 
 
 clean:
-	rm -f *.exe Out* *.dll
-
-comma:=,
-empty:=
-space:=$(empty) $(empty)
-clist = $(subst $(space),$(comma),$(1))
+	rm -f *.exe Out* log* *.dll

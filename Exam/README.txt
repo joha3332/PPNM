@@ -18,4 +18,4 @@ Furthermore I have implemented:
 
 As a further envestigation of the effectiveness of the algorithm,
 I have in the "comparison" folder made comparison of my 
-Cholesky-based equation solver with the QR-based method from prob 2.
+Cholesky-based equationsolver with the QR-based method from prob 2.

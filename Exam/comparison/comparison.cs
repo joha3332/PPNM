@@ -28,15 +28,6 @@ class  main
 
         /////  matrix dimension n*n         cd_runtime         qr_runtime 
         WriteLine($"{n} \t {cd_time.ElapsedMilliseconds} \t {qr_time.ElapsedMilliseconds}");
-
-
-
-        // vector Ax_cd=(A*x_cd);
-        // vector Ax_qr=(A*x_qr);
-        // if(b.approx(Ax_cd)){WriteLine("Cholesky-method passed");}
-        // else {WriteLine("Cholesky-method failed");}
-        // if(b.approx(Ax_qr)){WriteLine("QR-method passed");}
-        // else {WriteLine("QR-method failed");}
     }
     } //Method: Main
 

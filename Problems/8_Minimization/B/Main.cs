@@ -13,7 +13,6 @@ energy = new List<double>();
 sigma = new List<double>();
 error  = new List<double>();
 TextReader data = Console.In;
-TextWriter stdout = Console.Out;
 
 	do{
 	    string line = data.ReadLine();

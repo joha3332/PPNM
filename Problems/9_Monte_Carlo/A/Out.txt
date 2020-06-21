@@ -2,19 +2,16 @@ Problem A - Test of plain Monte Carlo integrator
 
 Test 1 - Integration of (sin(x))^2 from 0 to 2*PI
 Exact value 	 MC value 	 error estimate 	 error
-3,14159 	 3,15085 	 0,00702 		 0,00926
-test failed
+3,14159 	 3,14395 	 0,00222 		 0,00236
 
 
 Test 2 - Integration of sin(x)*sin(y) from 0 to PI
 Exact value 	 MC value 	 error estimate 	 error
-4,00000 	 3,99947 	 0,00091 		 0,00053
-test passed
+4,00000 	 3,99811 	 0,00289 		 0,00189
 
 
 Test 3 - Integration of 1/(1-Cos(x[0])*Cos(x[1])*Cos(x[2]))/(PI*PI*PI) from 0 to PI (in both x, y and z)
 Exact value 	 MC value  	 error estimate 	 error
-1,39320 	 1,38885 	 0,00235 		 0,00436
-test failed
+1,39320 	 1,39337 	 0,00334 		 0,00016
 
 

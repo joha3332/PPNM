@@ -8,14 +8,13 @@ Out.txt: Main.exe
 
 
 Main.exe: Main.cs qnewton.dll matlib.dll
-	mcs $< -r:$(call clist,$(filter %.dll,$^))
+	mcs $< -r:qnewton.dll -r:matlib.dll
 
 
 QNEWTON = ../lib/qnewton.cs
 
 qnewton.dll: $(QNEWTON) matlib.dll
-	src="$(filter %.cs,$^)"; libs="$(call clist,$(filter %.dll,$^))";\
-	mcs $$src -t:library -r:$$libs -out:$@
+	mcs $(QNEWTON) -t:library -r:matlib.dll -out:$@
 
 ####   Matlib  ####
 LIBDIR = ../../matlib
@@ -28,8 +27,3 @@ matlib.dll: $(MATRIX) $(VECTOR)
 
 clean:
 	rm -f *.exe Out* plotdata* *.dll *.svg
-
-comma:=,
-empty:=
-space:=$(empty) $(empty)
-clist = $(subst $(space),$(comma),$(1))

@@ -1,19 +1,18 @@
 All: Out.txt Error_plot.svg
 
-Error_plot.svg: error_plot.gpi Out.txt
+Error_plot.svg: Error_plot.gpi Out.txt
 	gnuplot $<
 
 Out.txt: Main.exe
 	mono $< >$@
 
 Main.exe: Main.cs mcintegrator.dll matlib.dll
-	mcs $< -r:$(call clist,$(filter %.dll,$^))
+	mcs $< -r:mcintegrator.dll -r:matlib.dll
 
 MC = ../lib/mcintegrator.cs
 
 mcintegrator.dll: $(MC) matlib.dll
-	src="$(filter %.cs,$^)"; libs="$(call clist,$(filter %.dll,$^))";\
-	mcs $$src -t:library -r:$$libs -out:$@
+	mcs $(MC) -t:library -r:matlib.dll -out:$@
 
 ####   Matlib  ####
 LIBDIR = ../../matlib
@@ -26,8 +25,3 @@ matlib.dll: $(MATRIX) $(VECTOR)
 
 clean:
 	rm -f *.exe Out* *.dll *.log *.svg
-
-comma:=,
-empty:=
-space:=$(empty) $(empty)
-clist = $(subst $(space),$(comma),$(1))

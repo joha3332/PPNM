@@ -1,4 +1,3 @@
-
 All: Out.txt Plot.svg
 
 Plot.svg: Plot.gpi Out.txt

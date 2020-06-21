@@ -26,6 +26,8 @@ public cholesky(matrix A){
 		L[i,j]=0;						
 	}
 
+	// Calculation of LT is NOT necessary,
+	// but is merly done to show all the components decomposition.
 	LT= new matrix(n,n);
 	for(int i=0; i<n;i++){
 		for(int j=0; j<n;j++)
