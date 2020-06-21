@@ -1,9 +1,11 @@
 # PPNM
 Praktisk programing og Numeriske metoder
-In this repo you will find my exercies of the course.
+In this repo you will find my solutions to the problems of the course.
 
-Each exercise is named like this
-    First by a number and possibly followed by a letter to indicate which part of the exercise this deals with. 
-    Secoundly, seperated by a underscore ´_´ i have named the exercise with a relvent name, which hopfully describes the topic i covers.
+Each problem has its on directory, named like this [PROBLEMNUMBER]_[TOPIC]
 
-Every exercise has a makefile named "Makefile"
+Each problem is then subdivided into parts a, b and c with they own makefile.
+	Except for prob 3, which has a common folder and a single makefile.
+
+All problems involving GNUplot will output "decimal_sign in locale is ." in the command line. 
+As this was programmed on a mac with decimal_sign: "," the GNUplot instructions are made to check for the local use of decimal sign.
