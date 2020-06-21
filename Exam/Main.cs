@@ -7,7 +7,7 @@ class  main
 
     //// Del A ////
 
-        int n=3;
+        int n=4;
         matrix A=rand_matrix(n);
     	
     	var cd=new cholesky(A);
